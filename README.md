@@ -47,7 +47,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
      fix_marks(schoolkid)
 ```
-<br>
+
 В функции ```fix_marks(schoolkid)``` ,
 <br>
 где аргумент - ```schoolkid``` фамилия и имя ученика, которому вы хотите исправить оценки;
