@@ -39,12 +39,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 <h3> Пример запуска скрипта </h3>
 
 Следующим шагом, выберите нужную вам функцию, сделайте импорт ее:
-<br>
-```from scripts import fix_marks```
+
+```from scripts import fix_marks```<br>
 <br>
 Подставьте значения, которые вам нужно ("Фролов Иван" пример):
 <br>
-```fix_marks("Фролов Иван")```
+```fix_marks("Фролов Иван")```<br>
 <br>
 Готово, теперь у вас нету 2 и 3, а вместо них, одни 5.
 
