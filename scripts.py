@@ -9,12 +9,12 @@ import random
 
 def fix_marks(schoolkid):
     child = Schoolkid.objects.get(full_name__contains=schoolkid)
-    bad_mark = Mark.objects.filter(schoolkid = child, points__lt=4)
-    for mark in bad_mark:
+    bad_marks = Mark.objects.filter(schoolkid = child, points__lt=4)
+    for mark in bad_marks:
       mark.points = 5
       mark.save()
 
-fix_makr(schoolkid)
+fix_marks(schoolkid)
 
 def remove_chastisements(schoolkid):
   child = Schoolkid.objects.get(full_name__contains=schoolkid)
@@ -25,11 +25,11 @@ def remove_chastisements(schoolkid):
 remove_chastisements(schoolkid)
 
 
-praise = ['Молодец!','Отлично!','Хорошо!','Гораздо лучше, чем я ожидал!','Ты меня приятно удивил!','Великолепно!','Прекрасно!','Ты меня очень обрадовал!','Именно этого я давно ждал от тебя!','Сказано здорово – просто и ясно!','Ты, как всегда, точен!','Очень хороший ответ!','Талантливо!','Ты сегодня прыгнул выше головы!','Я поражен!','Уже существенно лучше!'
+praises = ['Молодец!','Отлично!','Хорошо!','Гораздо лучше, чем я ожидал!','Ты меня приятно удивил!','Великолепно!','Прекрасно!','Ты меня очень обрадовал!','Именно этого я давно ждал от тебя!','Сказано здорово – просто и ясно!','Ты, как всегда, точен!','Очень хороший ответ!','Талантливо!','Ты сегодня прыгнул выше головы!','Я поражен!','Уже существенно лучше!'
 ,'Потрясающе!','Замечательно!','Прекрасное начало!','Так держать!','Ты на верном пути!','Здорово!','Это как раз то, что нужно!','Я тобой горжусь!','С каждым разом у тебя получается всё лучше!','Мы с тобой не зря поработали!','Я вижу, как ты стараешься!','Ты растешь над собой!','Ты многое сделал, я это вижу!','Теперь у тебя точно все получится!']
 
 def create_commendation(schoolkid,name_of_lesson):
-  text = random.choice(praise)
+  text = random.choice(praises)
   child = Schoolkid.objects.get(full_name__contains=schoolkid)
   child_year_of_study = child.year_of_study
   child_group_letter = child.group_letter 
